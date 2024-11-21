@@ -46,19 +46,19 @@ def rename_files():
         messagebox.showerror("Error", "please Enter a Valid Name Prefix.")
         return
 
-    #Rename files in the folder
-# Rename files in the folder
-try:
-    for count, filename in enumerate(os.listdir(folder_path), start=1):
-        file_extension = os.path.splitext(filename)[1]  # Get file extension
-        new_name = f"{name_prefix}_{count}{file_extension}"  # Corrected line
 
-        src = os.path.join(folder_path, filename)
-        dst = os.path.join(folder_path, new_name)
-        os.rename(src, dst)
-    messagebox.showinfo("Success", "Files have been renamed successfully!")
-except Exception as e:
-    messagebox.showerror("Error", f"An error occurred: {e}")
+# Rename files in the folder
+    try:
+        for count, filename in enumerate(os.listdir(folder_path), start=1):
+            file_extension = os.path.splitext(filename)[1]  # Get file extension
+            new_name = f"{name_prefix}_{count}{file_extension}"  # Corrected line
+
+            src = os.path.join(folder_path, filename)
+            dst = os.path.join(folder_path, new_name)
+            os.rename(src, dst)
+        messagebox.showinfo("Success", "Files have been renamed successfully!")
+    except Exception as e:
+        messagebox.showerror("Error", f"An error occurred: {e}")
 
 
 rename_button = tk.Button(root, text="Rename Files", command=rename_files )
