@@ -2,7 +2,7 @@ import tkinter
 from tkinter import Tk, Label, Button, filedialog
 import os
 from tkinter.messagebox import showerror, showinfo
-from converter import convert_doc_to_pdf  # Ensure converter.py exists in the same directory
+from converter import convert_doc_to_pdf
 
 def run_converter():
     """
